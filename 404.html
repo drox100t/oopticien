@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- SEO -->
+<meta name="description" content="Oopticien - Votre opticien de confiance à Mantes-la-Jolie. Lunettes, lentilles et services professionnels.">
+<meta name="keywords" content="Opticien, Lunettes, Lentilles, Mantes-la-Jolie, Oopticien, montures, lunettes de vue, lunettes de soleil">
+<meta name="author" content="Oopticien">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Oopticien - Prenez soin de vos yeux avec style">
+<meta property="og:description" content="Découvrez nos collections de lunettes et nos services d’opticien à Mantes-la-Jolie.">
+<meta property="og:image" content="images/logo.jpg">
+<meta property="og:url" content="https://tonsite.fr">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oopticien - Votre opticien de confiance">
+<meta name="twitter:description" content="Lunettes et services de qualité à Mantes-la-Jolie.">
+<meta name="twitter:image" content="images/logo.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="images/logo.jpg" type="image/x-icon">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Page non trouvée - Oopticien</title>
@@ -54,5 +75,53 @@
   50% { transform: rotate(10deg) scale(1.1); }
 }
 </style>
+<script>
+// Bloquer le clic droit
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Bloquer les raccourcis pour DevTools et Enregistrement
+document.addEventListener('keydown', function (event) {
+  // F12
+  if (event.key === "F12") {
+    event.preventDefault();
+    alert("🔒 Action non autorisée");
+  }
+
+  // Ctrl+Shift+I (Inspecter)
+  if (event.ctrlKey && event.shiftKey && event.key === 'I') {
+    event.preventDefault();
+    alert("🔒 Action non autorisée");
+  }
+
+  // Ctrl+Shift+J (Console)
+  if (event.ctrlKey && event.shiftKey && event.key === 'J') {
+    event.preventDefault();
+    alert("🔒 Action non autorisée");
+  }
+
+  // Ctrl+U (Afficher code source)
+  if (event.ctrlKey && event.key === 'u') {
+    event.preventDefault();
+    alert("🔒 Action non autorisée");
+  }
+
+  // Ctrl+S (Enregistrer)
+  if (event.ctrlKey && event.key === 's') {
+    event.preventDefault();
+    alert("🔒 Action non autorisée");
+  }
+});
+
+// Désactiver la sélection du texte (optionnel)
+document.addEventListener('selectstart', e => e.preventDefault());
+document.addEventListener('dragstart', e => e.preventDefault());
+document.addEventListener('copy', e => e.preventDefault());
+document.addEventListener('cut', e => e.preventDefault());
+
+</script>
+
+</body>
+</html>
+
 </body>
 </html>

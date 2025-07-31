@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <script src="script.js"></script>
+  <!-- SEO -->
+<meta name="description" content="Oopticien - Votre opticien de confiance à Mantes-la-Jolie. Lunettes, lentilles et services professionnels.">
+<meta name="keywords" content="Opticien, Lunettes, Lentilles, Mantes-la-Jolie, Oopticien, montures, lunettes de vue, lunettes de soleil">
+<meta name="author" content="Oopticien">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Oopticien - Prenez soin de vos yeux avec style">
+<meta property="og:description" content="Découvrez nos collections de lunettes et nos services d’opticien à Mantes-la-Jolie.">
+<meta property="og:image" content="images/logo.jpg">
+<meta property="og:url" content="https://tonsite.fr">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oopticien - Votre opticien de confiance">
+<meta name="twitter:description" content="Lunettes et services de qualité à Mantes-la-Jolie.">
+<meta name="twitter:image" content="images/logo.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="images/logo.jpg" type="image/x-icon">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>O'Opticien - Accueil</title>
@@ -10,10 +32,16 @@
 
 </head>
 <body>
+<!-- Loader -->
+ <div id="loader">
+  <img src="images/logo.jpg" alt="Chargement..." />
+</div>
 
   <!-- Header -->
 <!-- Header avec menu burger -->
 <header>
+
+
   <div class="logo">
     <img src="images/logo.jpg" alt="Logo O Opticien">
   </div>
@@ -36,6 +64,7 @@
   </div>
 </header>
 
+<div id="progress-bar"></div>
 
   <!-- Section Accueil -->
   <section id="accueil" class="hero">
@@ -190,6 +219,13 @@
 </section>
 
 
+<div id="cookie-banner" class="cookie-banner">
+  <p>Ce site utilise des cookies pour améliorer votre expérience. Vous pouvez choisir les types de cookies à activer.</p>
+  <div class="cookie-options">
+    <button onclick="acceptCookies()">Tout accepter</button>
+    <button onclick="refuseCookies()">Tout refuser</button>
+  </div>
+</div>
 <!-- Contact / Accès -->
 <section id="contact" class="contact">
   <h2>Contact & Accès</h2>
@@ -200,7 +236,7 @@
     <div class="contact-info">
       <p><strong>Adresse :</strong><br>20 Rue Prte aux Saints, 78200 Mantes-la-Jolie</p>
       <p><strong>Téléphone :</strong><br><a href="tel:+33123456789">01 34 77 23 97</a></p>
-      <p><strong>Email :</strong><br><a href="mailto:contact@oopticien.fr">oopticien@gmail.com</a></p>
+      <p><strong>Email :</strong><br><a href="mailto:contact@oopticien.fr">contact.oopticien@gmail.com</a></p>
       <p><strong>Horaires :</strong><br>Mardi - Samedi : 10h – 13h | 14h – 19h<br>Vendredi : 10:00–12:00 | 14:00–19:00<br>Dimanche : fermé<br>Lundi : fermé</p>
     </div>
 
@@ -224,62 +260,6 @@
     <button type="submit">Envoyer</button>
   </form>
 </section>
-
-
-<script>
-  const buttons = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.gallery .item');
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      const filter = button.getAttribute('data-filter');
-
-      items.forEach(item => {
-        if (filter === 'all' || item.classList.contains(filter)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
-<script>
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('nav');
-  const navLinks = document.querySelectorAll('#nav a');
-
-  // Toggle menu
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('show');
-  });
-
-  // Fermer menu au clic sur un lien
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('show');
-    });
-  });
-</script>
-
-<script>
-  const sections = document.querySelectorAll("section");
-  const options = { threshold: 0.1 };
-
-  const reveal = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(reveal, options);
-  sections.forEach(section => observer.observe(section));
-</script>
 
 
 <footer>
@@ -324,33 +304,7 @@
 </div>
 
 </footer>
-<script>
-function acceptCookies() {
-  localStorage.setItem("cookiesAccepted", "true");
-  document.getElementById("cookie-banner").style.display = "none";
-}
 
-function refuseCookies() {
-  localStorage.setItem("cookiesAccepted", "false");
-  document.getElementById("cookie-banner").style.display = "none";
-}
-
-window.onload = () => {
-  if (localStorage.getItem("cookiesAccepted") === null) {
-    document.getElementById("cookie-banner").style.display = "block";
-  } else {
-    document.getElementById("cookie-banner").style.display = "none";
-  }
-};
-</script>
-
-<div id="cookie-banner" class="cookie-banner">
-  <p>Ce site utilise des cookies pour améliorer votre expérience. Vous pouvez choisir les types de cookies à activer.</p>
-  <div class="cookie-options">
-    <button onclick="acceptCookies()">Tout accepter</button>
-    <button onclick="refuseCookies()">Tout refuser</button>
-  </div>
-</div>
 
 </body>
 </html>
